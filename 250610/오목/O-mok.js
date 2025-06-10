@@ -43,7 +43,8 @@ function omk (cx,cy,dx,dy,target,time){
     
     let nx=cx+dx;
     let ny=cy+dy;
-    if(time <=5 &&0<=nx&&nx<arr.length&&0<=ny&&ny<arr.length&& arr[nx][ny] === target) return 1 + omk(nx,ny, dx, dy ,target,time++)
-    if( arr[nx][ny] !==target) return 0;
+    if( time >5 || !(0<=nx&&nx<arr.length&&0<=ny&&ny<arr.length) ||arr[nx][ny] !==target) return 0;
+    if(time <=5 &&arr[nx][ny] === target) return 1 + omk(nx,ny, dx, dy ,target,time++)
+ 
   
 }
