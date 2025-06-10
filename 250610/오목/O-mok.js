@@ -38,6 +38,7 @@ for(let i=0 ; i<arr.length;i++){
 wx += dx[dir]*2;
 wy += dy[dir]*2;
 console.log(win)
+if(win)
 console.log(wx, wy);
 function omk (cx,cy,dx,dy,target,time){
     
