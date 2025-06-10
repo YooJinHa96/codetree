@@ -10,7 +10,8 @@ let sum = arr.reduce((acc, curr) => acc + curr, 0);
 let dis= Number.MAX_SAFE_INTEGER
 for(let i=0 ;i < n ; i++){
     for(let j =i+1 ; j<n ;j++){
-        dis = Math.min(dis, Math.abs(sum -arr[i]-arr[j]))
+    
+        dis = Math.min(dis, Math.abs(s -( sum -arr[i]-arr[j])))
     }
 }
-console.log(dis)
+console.log (dis)
