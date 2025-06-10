@@ -7,7 +7,7 @@ const grid = input.slice(1, n + 1).map(line => line.split(' ').map(Number));
 
 // Please write your code here.
 let result = -1;
-for(let i =0 ; i < grid.length-1 ; i++){
+for(let i =0 ; i < grid.length ; i++){
     let firstMax=-1;
     for(let j=0 ; j < grid.length-2 ; j++){
         firstMax=Math.max(grid[i][j]+ grid[i][j+1] + grid[i][j+2])
