@@ -12,10 +12,21 @@ for(let i =0 ; i < arr2.length ; i++){
 }
 let result =0;
 for(let i =0 ; i<arr1.length - m +1; i++){
+    let arr1Mapper ={}
+     for(let j =i ; j < i+m; j ++){
+         arr1Mapper[arr1[j]]=true;
+         
+    }
     let count=0;
     for(let j =i ; j < i+m; j ++){
         if(mapper[arr1[j]]) count++;
+         
     }
-    if(count===m) result++;
+    let countb=0;
+    for(let k =0 ; k<m;k++){
+        if(arr1Mapper[arr2[k]])countb++;
+    }
+
+    if(count===m&& countb===m) result++;
 }
 console.log(result)
