@@ -25,9 +25,9 @@ for(let i= 0 ; i < n;i++){
 let result = 0;
 
 // Please Write your code here.
-for(let i =0 ; i < n -k +1 ;i++){
+for(let i =0 ; i < maxLen -k  ;i++){
     let count =0 ;
-    for(let j=i; j<=i+k;j++){
+    for(let j=i; j<=i+k;j++){ 
         count+=arr[j];
     }
    
