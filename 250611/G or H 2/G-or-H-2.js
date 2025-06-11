@@ -26,7 +26,7 @@ for(let i =0 ; i < maxPosition; i++){
     for(let j =i ; j <maxPosition;j++){
         if(arr[j]==='G') gCount++;
         if(arr[j]==='H') hCount++;
-        if( arr[j]!==0&& gCount >0&& hCount>0&& gCount===hCount){
+        if( arr[j]!==0&&((gCount===0&&hCount>0)||( hCount===0&&gCount>0) || (gCount>0&& hCount>0&&gCount===hCount))){
             distance=j-i;
 
            result=Math.max(distance,result)
