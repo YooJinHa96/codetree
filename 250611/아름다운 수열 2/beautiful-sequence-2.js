@@ -8,25 +8,25 @@ const arr2 = input[2].split(" ").map(Number);
 // Please write your code here.
 let mapper= {};
 for(let i =0 ; i < arr2.length ; i++){
-    mapper[arr2[i]]=true;
+    if(mapper[arr2[i]]) mapper[arr2[i]]++
+    else mapper[arr2[i]]=1;
 }
 let result =0;
 for(let i =0 ; i<arr1.length - m +1; i++){
     let arr1Mapper ={}
      for(let j =i ; j < i+m; j ++){
-         arr1Mapper[arr1[j]]=true;
+        if(arr1Mapper[arr1[j]]) arr1Mapper[arr1[j]]++
+    else arr1Mapper[arr1[j]]=1;
          
     }
-    let count=0;
-    for(let j =i ; j < i+m; j ++){
-        if(mapper[arr1[j]]) count++;
-         
-    }
-    let countb=0;
-    for(let k =0 ; k<m;k++){
-        if(arr1Mapper[arr2[k]])countb++;
-    }
-
-    if(count===m&& countb===m) result++;
+     let flag=false
+     for(const num in mapper){
+        if(arr1Mapper[num] && arr1Mapper[num]===mapper[num]) flag= true;
+        else{
+            flag=false;
+            break;
+        }
+     }
+     if(flag) result++;
 }
 console.log(result)
