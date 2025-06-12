@@ -10,6 +10,7 @@ for(let i =1 ; i<10; i++){
     for(let j =1 ; j <10; j++){
         for(let k =1 ;k<10;k++) {
             let flag=false;
+            if(i=== j || i ===k|| j===k )continue 
             for(let q =0 ; q< n ;q++){
                 const [num, s, b]=arr[q];
                 let strike=0;
