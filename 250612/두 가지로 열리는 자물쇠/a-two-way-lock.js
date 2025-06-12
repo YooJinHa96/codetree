@@ -12,16 +12,16 @@ let triplets =[];
 let triplets2=[]
 
 for(let q =0 ;q < 3 ; q++){
-    let t=[];
-    let t2=[];
+    let t=new Set()
+    let t2=new Set();
     for(let i=password[q]-2 ; i<=password[q]+2; i++){
-        t.push(wrap(i,n))
+        t.add(wrap(i,n))
     }   
      for(let i=password2[q]-2 ; i<=password2[q]+2; i++){
-        t2.push(wrap(i,n))   
+        t2.add(wrap(i,n))   
     }     
-    triplets.push(t)
-    triplets2.push(t2)  
+    triplets.push([...t])
+    triplets2.push([...t2])  
 }
 function generateCombinations(arr) {
   const set = new Set();
@@ -34,6 +34,7 @@ function generateCombinations(arr) {
   }
   return set;
 }
+
 const set1 = generateCombinations(triplets);
 const set2 = generateCombinations(triplets2);
 
